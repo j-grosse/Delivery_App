@@ -19,18 +19,18 @@ const Dashtable = () => {
   return (
     <>
       <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white ">
-        Recent Orders
+        Recent
       </h1>
       <section className="bg-primary-50/00 dark:bg-gray-900 py-3 sm:py-5 ">
         <div className="px-0 mx-auto max-w-screen-lg lg:px-0 rounded-lg shadow-lg">
           <div className="relative overflow-hidden bg-primary-50/00  dark:bg-gray-800 sm:rounded-lg">
-            <div className="overflow-x-auto border-2">
+            <div className="overflow-x-auto border rounded-lg">
               <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-primary-100 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
-                    {/* <th scope="col" className="px-4 py-3">
-                      Order id
-                    </th> */}
+                    <th scope="col" className="px-4 py-3">
+                      id
+                    </th>
                     {/* <th scope="col" className="px-4 py-3">
                       Pickup location
                     </th>

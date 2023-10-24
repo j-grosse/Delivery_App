@@ -17,7 +17,7 @@ const Dashboard = () => {
   const [displayPage, setDisplayPage] = useState(5);
   return (
     // Background image --- parent style: opacity 0.99 relative --- child: img opacity absolute z-index w h cover ---
-<AnimatedPage>
+    <AnimatedPage>
       <section className="flex max-w-screen-xxl bg-gradient-to-t from-primary-50 to-primary-50">
         <div>
           <NavbarSide

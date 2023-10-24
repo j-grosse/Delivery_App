@@ -18,11 +18,11 @@ const Header = () => {
         <div className="px-4 py-1 lg:px-6 flex flex-wrap justify-between items-center mx-auto max-w-screen-xxl">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="text-primary-800 self-center text-xl font-bold whitespace-nowrap dark:text-white">
+            <div className="text-primary-800 self-center text-xl font-bold whitespace-nowrap dark:text-white hover-zoom">
               <NavLink to="/">
                 <img
                   src={cat1}
-                  className=" h-6 sm:h-9"
+                  className="h-6 sm:h-9"
                   alt="Cat Logo"
                   style={{ filter: 'invert(0.3)' }}
                 />

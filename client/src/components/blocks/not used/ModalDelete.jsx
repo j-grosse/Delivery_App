@@ -1,13 +1,14 @@
 'use client';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
  const ModalDelete = () => {
   const [openModal, setOpenModal] = useState(false);
   const props = { openModal, setOpenModal };
 
   return (
-    <>
-      <button onClick={() => props.setOpenModal('pop-up')}>Toggle modal</button>
+  <>
+      <button onClick={() => props.setOpenModal('pop-up')}>Toggle modal
+      </button>
       {/* <div show={props.openModal === 'pop-up'} size="md" popup onClose={() => props.setOpenModal(true)}>
           <div className="text-center">
             <div className="mx-auto mb-4 h-14 w-14 text-gray-400 dark:text-gray-200" />
@@ -21,8 +22,8 @@ import { useState } from 'react';
               <button color="gray" onClick={() => props.setOpenModal(false)}>
                 No, cancel
               </button>
-            </div> */}
-          </div>
+            </div>
+          </div> */}
     </>
   )
 }

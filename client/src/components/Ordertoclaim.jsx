@@ -1,9 +1,9 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import axios from "../axiosInstance";
-import OrderCards from "./OrderCards";
-import { v4 as uuidv4 } from "uuid";
+import React from 'react';
+import { useState, useEffect } from 'react';
+import axios from '../axiosInstance';
+import OrderCards from './OrderCards';
+import { v4 as uuidv4 } from 'uuid';
+import CatBox from '../assets/cat-box.png';
 
 const Ordertoclaim = () => {
   const [Orders, setOrders] = useState(null); // Orders array from backend
@@ -16,8 +16,9 @@ const Ordertoclaim = () => {
   return (
     <>
       <h1 className="mb-4 text-4xl tracking-tight font-extrabold text-left text-gray-900 dark:text-white ">
-        Orders to be claimed
+        Incoming
       </h1>
+      <br />
       <ul className="flex-col ">
         {Orders &&
           Orders.map((order) => (
@@ -26,6 +27,16 @@ const Ordertoclaim = () => {
             </li>
           ))}
       </ul>
+      <br />
+      <br />
+      <br />
+      <br />
+      <img
+        className="mx-auto rounded-lg"
+        src={CatBox}
+        alt="cat in bike basket"
+      />
+      <br />
     </>
   );
 };

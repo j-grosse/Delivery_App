@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../context/Auth';
 import axios from '../axiosInstance';
-import CatBox from '../assets/cat-box.png';
+// import CatBox from '../assets/cat-box.png';
 
 const Userprofile = () => {
   // Where user could change information in user dashboard
@@ -210,12 +210,12 @@ const Userprofile = () => {
             </div>
           </form>
         </div>
-        <img
+        {/* <img
           className="mx-auto rounded-lg"
           src={CatBox}
           alt="cat in bike basket"
         />
-        <br />
+        <br /> */}
       </section>
     </>
   );

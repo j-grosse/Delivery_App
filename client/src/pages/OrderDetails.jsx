@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from '../axiosInstance';
+import { AuthContext } from '../context/Auth';
 
 const OrderDetails = () => {
+  const { user } = useContext(AuthContext);
   const { id } = useParams();
   const navigate = useNavigate();
   const [error, setError] = useState(null);
@@ -31,14 +33,15 @@ const OrderDetails = () => {
             Order Details
           </h2>
           <div className="py-2 px-10 mx-auto max-w-2xl">
-            <div className="flex flex-col items-left bg-gray-50 border border-gray-200 rounded-lg shadow md:flex-col md:max-w-xl dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-8">
+            <div className="flex flex-col items-left bg-gray-50 border border-gray-200 rounded-lg shadow md:flex-col md:max-w-xl dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 p-8 shadow-lg">
               <h2 className="mb-2 text-xl font-semibold leading-none text-gray-900 md:text-2xl dark:text-white"></h2>
-              <div className=''>
+              <div className="">
                 <p className="mb-4 text-xl font-semibold leading-none text-gray-900 md:text-lg dark:text-white">
                   from
                   <br />
                 </p>
-                {order.pickupLocation} <br />
+                {order.pickupLocation}
+                <br />
                 <br />
                 <p className="mb-4 text-xl font-semibold leading-none text-gray-900 md:text-lg dark:text-white">
                   to <br />
@@ -47,15 +50,12 @@ const OrderDetails = () => {
               </div>
               <div>
                 <dl>
-                  {/* <dt className="mb-2 font-semibold leading-none text-gray-900 dark:text-white">
-                Order Details
-              </dt> */}
                   <dd className="mb-4 mt-12 font-light text-gray-500 sm:mb-5 dark:text-gray-400">
-                    {/* <p>{order.customerId}</p>
-                <p>{order.employeeId}</p>
-                <p>{order.claimed}</p>
-                <p>{order.paid}</p> */}
-                    {/* <p>{order.timestamps}</p> */}
+              {/* <p>{order.customerId}</p>
+                  <p>{order.employeeId}</p>
+                  <p>{order.claimed}</p>
+                  <p>{order.paid}</p>
+                  <p>{order.timestamps}</p> */}
                   </dd>
                 </dl>
                 <dl className="flex items-center space-x-8 mb-6">
@@ -64,7 +64,7 @@ const OrderDetails = () => {
                       ID
                     </dt>
                     <dd className="mb-4 font-light text-gray-500 sm:mb-5 dark:text-gray-400">
-                      {order._id.slice(-5)}
+                      {order._id.slice(-4)}
                     </dd>
                   </div>
                   <div>
@@ -126,6 +126,7 @@ const OrderDetails = () => {
                   <Link to={`/orders/${id}/update`}>Update</Link>
                 </button>
 
+                {user.userType === 'customer' && (
                 <button
                   type="button"
                   className="inline-flex items-center text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900"
@@ -146,6 +147,7 @@ const OrderDetails = () => {
                   </svg>
                   Delete
                 </button>
+                )}
               </div>
             </div>
           </div>

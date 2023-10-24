@@ -1,19 +1,19 @@
-import React from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import axios from "../../axiosInstance";
+import React from 'react';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import axios from '../../axiosInstance';
 const Claimcards = ({ order }) => {
   const navigate = useNavigate();
   const id = order._id;
   const handleDelete = () => {
     axios
       .delete(`/api/Orders/${id}`)
-      .then((res) => navigate("/"))
+      .then((res) => navigate('/'))
       .catch((e) => console.log(e));
   };
 
   return (
     <a
-      href="#"
+      // href="#"
       className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
     >
       <img
@@ -31,10 +31,10 @@ const Claimcards = ({ order }) => {
           Customer: {order.customerId.username}
         </p>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          OrderId: {order._id.slice(-5)}
+          OrderId: {order._id.slice(-4)}
         </p>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-          Orderstatus: {order.claimed ? "Claimed" : "Wait for claiming"}
+          Orderstatus: {order.claimed ? 'Claimed' : 'Wait for claiming'}
         </p>
         <div>
           <button
@@ -42,7 +42,7 @@ const Claimcards = ({ order }) => {
             type="submit"
             className="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 shadow-lg mr-2"
           >
-            CANCEL
+            Cancel
           </button>
           {/* <button
             onClick={() => {

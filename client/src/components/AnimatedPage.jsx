@@ -25,12 +25,12 @@ const AnimatedPage = ({ children }) => {
         opacity: 1,
         x: 0,
         transition: {
-          duration: 0.8,
+          duration: 1,
           ease: [0.61, 0.1, 0.88, 1],
         },
       }}
-      exit={{ y: 0, opacity: 0 }}
-      transition={{ duration: 1 }}
+      exit={{ x: 0, opacity: 0 }}
+      transition={{ duration: 0.4 }}
     >
       {children}
     </motion.div>

@@ -78,7 +78,7 @@ const NewOrder = () => {
       .catch((e) => console.log(e));
   };
 
-  console.log('checking ordid', id);
+  console.log('checking order id', id);
 
   return (
     <div className="bg-primary-50/00">
@@ -109,6 +109,7 @@ const NewOrder = () => {
                     >
                       Origin
                     </label>
+
                     <input
                       type="text"
                       name="brand"
@@ -229,9 +230,9 @@ const NewOrder = () => {
                   </p>
                 </div>
                 <div className="flex justify-center">
-                <button className="inline-flex items-center px-10 py-2.5 mt-4 sm:mt-6 text-md font-medium text-center text-white bg-primary-500 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800 shadow-lg">
-                  Save Order
-                </button>
+                  <button className="inline-flex items-center px-10 py-2.5 mt-4 sm:mt-6 text-md font-medium text-center text-white bg-primary-500 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800 shadow-lg">
+                    Save Order
+                  </button>
                 </div>
                 {/* <button
                   type="submit"

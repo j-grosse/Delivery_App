@@ -122,7 +122,7 @@ const ProjMap = ({
       // });
       /// calculations
     } catch (error) {
-      console.log('mapppppp errorrrrr', error);
+      console.log('map error', error);
     }
   }
 

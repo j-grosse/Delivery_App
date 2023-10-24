@@ -3,14 +3,11 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import socket from '../../socket/socket';
-// import bell from "../img/bell.svg";
 import bell from '../assets/bell.png';
 import axios from '../axiosInstance';
 import ProfilePicture from '../assets/profile-picture.png';
 import { useContext } from 'react';
 import { AuthContext } from '../context/Auth';
-
-// import notification from "../img/notification.svg";
 
 const Bell = () => {
   const { user } = useContext(AuthContext);
