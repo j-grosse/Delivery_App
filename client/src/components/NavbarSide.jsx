@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { AuthContext } from '../context/Auth';
 import { useContext } from 'react';
@@ -10,7 +11,13 @@ import { BsFillPersonFill } from 'react-icons/bs';
 const NavbarSide = ({ displayPage, setDisplayPage }) => {
   const { user } = useContext(AuthContext);
   const [sidedisplay, setSideDisplay] = useState(true);
+  const navigate = useNavigate();
+
   let selectedBtn = 'bg-primary-200 rounded-lg';
+  const navToPage = (page) => {
+    navigate(page);
+    // onClick={navToPage('/dashboard')}
+  };
 
   return (
     <>
