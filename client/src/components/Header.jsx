@@ -61,8 +61,7 @@ const Header = () => {
               </div>
 
               {/* hamburger menu */}
-              <button
-                data-collapse-toggle="mobile-menu2"
+              {/* <button
                 type="button"
                 className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 shadow-lg"
                 aria-controls="mobile-menu2"
@@ -93,7 +92,7 @@ const Header = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-              </button>
+              </button> */}
             </div>
           )}
 
