@@ -6,7 +6,7 @@ const Claimcards = ({ order }) => {
   const id = order._id;
   const handleDelete = () => {
     axios
-      .delete(`/api/Orders/${id}`)
+      .delete(`/api/orders/${id}`)
       .then((res) => navigate('/'))
       .catch((e) => console.log(e));
   };

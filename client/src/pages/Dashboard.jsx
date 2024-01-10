@@ -21,8 +21,8 @@ const Dashboard = () => {
       <section className="flex max-w-screen-xxl bg-gradient-to-t from-primary-50 to-primary-50">
         <div>
           <NavbarSide
-            displayPage={displayPage}
-            setDisplayPage={setDisplayPage}
+          displayPage={displayPage}
+          setDisplayPage={setDisplayPage}
           />
         </div>
         <div className="flex-col mx-auto pt-[2rem] bg-gradient-to-t from-primary-50 to-primary-50 p-10">

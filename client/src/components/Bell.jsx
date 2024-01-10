@@ -27,7 +27,7 @@ const Bell = () => {
 
   const handleClaim = () => {
     axios
-      .put(`/api/Orders/${id}`, { claimed: true, employeeId: user._id })
+      .put(`/api/orders/${id}`, { claimed: true, employeeId: user._id })
       .then((res) => {
         res.data, console.log(res.data);
       })

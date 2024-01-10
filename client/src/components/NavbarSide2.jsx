@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 import { AuthContext } from '../context/Auth';
 import { useContext } from 'react';
@@ -8,7 +8,7 @@ import { CiClock2 } from 'react-icons/ci';
 import { BiSupport } from 'react-icons/bi';
 import { BsFillPersonFill } from 'react-icons/bs';
 
-const NavbarSide = ({ displayPage, setDisplayPage }) => {
+const NavbarSide = () => {
   const { user } = useContext(AuthContext);
   const [sidedisplay, setSideDisplay] = useState(true);
   const navigate = useNavigate();
@@ -23,34 +23,33 @@ const NavbarSide = ({ displayPage, setDisplayPage }) => {
       {sidedisplay && user && (
         <div className="overflow-y-auto py-5 px-3 h-full bg-gradient-to-t from-primary-50 to-primary-100 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
           <ul className="space-y-2">
-            <li className={displayPage === 5 ? selectedBtn : undefined}>
-              <button
-                onClick={() => {
-                  setDisplayPage(5);
-                }}
-                className="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-primary-300 dark:hover:bg-gray-700 group"
-              >
-                <svg
-                  aria-hidden="true"
-                  className="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
+            <li>
+              <Link to="/dashboard">
+                Overview-Link
+                <button
+                  // onClick={navToPage('/dashboard')}
+                  className="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-primary-300 dark:hover:bg-gray-700 group"
                 >
-                  <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-                  <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
-                </svg>
-                <span className="flex-1 ml-3 text-left whitespace-nowrap">
-                  Overview
-                </span>
-              </button>
+                  <svg
+                    aria-hidden="true"
+                    className="w-6 h-6 text-gray-400 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+                  </svg>
+                  <span className="flex-1 ml-3 text-left whitespace-nowrap">
+                    Overview
+                  </span>
+                </button>
+              </Link>
             </li>
             {user.userType === 'employee' && (
-              <li className={displayPage === 3 ? selectedBtn : undefined}>
+              <li>
                 <button
-                  onClick={() => {
-                    setDisplayPage(3);
-                  }}
+                  // onClick={navToPage('/orders/incoming')}
                   type="button"
                   className="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-primary-300 dark:text-white dark:hover:bg-gray-700"
                   aria-controls="dropdown-sales"
@@ -73,11 +72,9 @@ const NavbarSide = ({ displayPage, setDisplayPage }) => {
             )}
 
             {user.userType === 'customer' && (
-              <li className={displayPage === 4 ? selectedBtn : undefined}>
+              <li>
                 <button
-                  onClick={() => {
-                    setDisplayPage(4);
-                  }}
+                  // onClick={navToPage('/orders/new')}
                   type="button"
                   className="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-primary-300 dark:text-white dark:hover:bg-gray-700"
                   aria-controls="dropdown-sales"
@@ -124,11 +121,9 @@ const NavbarSide = ({ displayPage, setDisplayPage }) => {
                 </span>
               </button>
             </li> */}
-            <li className={displayPage === 1 ? selectedBtn : undefined}>
+            <li>
               <button
-                onClick={() => {
-                  setDisplayPage(1);
-                }}
+                // onClick={navToPage('/profile')}
                 type="button"
                 className="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-primary-300 dark:text-white dark:hover:bg-gray-700"
                 aria-controls="dropdown-pages"
@@ -150,11 +145,9 @@ const NavbarSide = ({ displayPage, setDisplayPage }) => {
             </li>
 
             {user.userType === 'customer' && (
-              <li className={displayPage === 2 ? selectedBtn : undefined}>
+              <li>
                 <button
-                  onClick={() => {
-                    setDisplayPage(2);
-                  }}
+                  // onClick={navToPage('/support')}
                   type="button"
                   className="flex items-center p-2 w-full text-base font-normal text-gray-900 rounded-lg transition duration-75 group hover:bg-primary-300 dark:text-white dark:hover:bg-gray-700"
                   aria-controls="dropdown-pages"

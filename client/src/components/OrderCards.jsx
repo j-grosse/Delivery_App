@@ -12,7 +12,7 @@ const OrderCards = ({ order, Orders, setOrders }) => {
 
   const handleDelete = () => {
     axios
-      .delete(`/api/Orders/${id}`)
+      .delete(`/api/orders/${id}`)
       .then((res) => {
         const newOrders = Orders.filter((e) => e._id !== order._id);
         setOrders(newOrders);
@@ -23,7 +23,7 @@ const OrderCards = ({ order, Orders, setOrders }) => {
   const handleClaim = () => {
     order.claimed = true;
     order.employeeId = user._id;
-    axios.put(`/api/Orders/${id}`, order).then((res) => {
+    axios.put(`/api/orders/${id}`, order).then((res) => {
       const newOrders = Orders.filter((e) => e._id !== order._id);
       setOrders(newOrders);
     });
@@ -31,7 +31,7 @@ const OrderCards = ({ order, Orders, setOrders }) => {
 
   const handleFinishedOrder = () => {
     order.delivered = true;
-    axios.put(`/api/Orders/${id}`, order).then((res) => {
+    axios.put(`/api/orders/${id}`, order).then((res) => {
       const newOrders = Orders.filter((e) => e._id !== order._id);
       setOrders(newOrders);
     });

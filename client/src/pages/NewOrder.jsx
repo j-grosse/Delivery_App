@@ -7,7 +7,6 @@ import socket from '../../socket/socket';
 
 import axios from '../axiosInstance';
 import ProjMap from '../components/ProjMap';
-import PayModal from '../components/PayModal';
 import CatMilk from '../assets/cat-milk.png';
 
 const NewOrder = () => {
@@ -57,7 +56,7 @@ const NewOrder = () => {
     // {image: image || defaultImage}
 
     axios
-      .post(`/api/Orders`, {
+      .post(`/api/orders`, {
         pickupLocation,
         dropLocation,
         weight,
@@ -115,6 +114,7 @@ const NewOrder = () => {
                       name="brand"
                       id="brand"
                       value={pickupLocation}
+                      onChange={(e) => setPickupLocation(e.target.value)}
                       className="bg-primary-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       placeholder="PickupLocation"
                     />
@@ -132,6 +132,7 @@ const NewOrder = () => {
                       name="brand"
                       id="brand"
                       value={dropLocation}
+                      onChange={(e) => setDropLocation(e.target.value)}
                       className="bg-primary-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       placeholder="DropLocation"
                     />

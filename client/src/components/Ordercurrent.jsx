@@ -8,7 +8,7 @@ const Ordercurrent = () => {
   const [Orders, setOrders] = useState(null); // Orders array from backend
   useEffect(() => {
     axios
-      .get(`/api/Orders/currentOrder`)
+      .get(`/api/orders/currentOrder`)
       .then((res) => {
         setOrders(res.data);
       })

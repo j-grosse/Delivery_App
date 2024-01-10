@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { AuthContext } from "../context/Auth";
+import { AuthContext } from "../../context/Auth";
 import { Navigate, NavLink } from "react-router-dom";
 import "flowbite";
 

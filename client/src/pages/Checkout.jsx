@@ -1,5 +1,4 @@
 import React from 'react';
-import PayModal from '../components/PayModal';
 import axios from '../axiosInstance';
 import socket from '../../socket/socket';
 import { useNavigate, NavLink } from 'react-router-dom';
@@ -15,7 +14,7 @@ const Checkout = ({ price, distance, paid, setPaid, id, orderData }) => {
       setPaid,
     });
     axios
-      .put(`/api/Orders/${id}`, { paid: newPaid })
+      .put(`/api/orders/${id}`, { paid: newPaid })
       .then((res) => {
         res.data;
       })

@@ -13,7 +13,7 @@ function TableItems({ order, Orders, setOrders }) {
 
   const handleDelete = () => {
     axios
-      .delete(`/api/Orders/${order._id}`)
+      .delete(`/api/orders/${order._id}`)
       .then((res) => {
         const newOrders = Orders.filter((e) => e._id !== order._id);
         setOrders(newOrders);
@@ -25,7 +25,7 @@ function TableItems({ order, Orders, setOrders }) {
     order.claimed = true;
     order.employeeId = user._id;
     console.log('🚀 ~ file: OrderCards.jsx:26 ~ axios.put ~ order:', order);
-    axios.put(`/api/Orders/${order._id}`, order).then((res) => {
+    axios.put(`/api/orders/${order._id}`, order).then((res) => {
       const newOrders = Orders.filter((e) => e._id !== order._id);
       setOrders(newOrders);
     });
@@ -37,7 +37,7 @@ function TableItems({ order, Orders, setOrders }) {
 
   const handleFinishedOrder = () => {
     order.delivered = true;
-    axios.put(`/api/Orders/${order._id}`, order).then((res) => {
+    axios.put(`/api/orders/${order._id}`, order).then((res) => {
       const newOrders = Orders.filter((e) => e._id !== order._id);
       setOrders(newOrders);
     });

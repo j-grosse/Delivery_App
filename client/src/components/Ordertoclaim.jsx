@@ -8,7 +8,7 @@ import CatBox from '../assets/cat-box.png';
 const Ordertoclaim = () => {
   const [Orders, setOrders] = useState(null); // Orders array from backend
   useEffect(() => {
-    axios.get(`/api/Orders/toclaim`).then((res) => {
+    axios.get(`/api/orders/toclaim`).then((res) => {
       setOrders(res.data);
     });
   }, []);
